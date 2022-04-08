@@ -1,0 +1,26 @@
+package com.elearning.util;
+
+public class Constants {
+
+	public static final String DATE_FORMAT = "dd-MM-yyyy";
+	public static final String FILE_UPLOAD_FOLDER_FORMAT = "dd-MM-yyyy_HH-mm-ss-SSS";
+	public static final int BUFFER_SIZE = 4096;
+	
+	public static final String COURSE_VIEW = "course";
+	public static final String LEARNER_VIEW = "learners";
+	public static final String LEARNER_DETAIL = "learnerDetail";
+	
+	public static final String DOCUMENT_DETAIL = "documentDetail";
+	public static final String DOCUMENT_VIEW = "document";
+	public static final String UPLOADED_FOLDER = "D://temp//";
+	
+	
+	public static final String UPDATE_SUCCESS_MESSAGE = "Updated Successfully";
+	public static final String CREATE_SUCCESS_MESSAGE  = "Added Successfully";
+	public static final String UPDATE_ERROR_MESSAGE  = "Error occured during update";
+	public static final String CREATE_ERROR_MESSAGE  = "Error occured during creation";
+	public static final String NOT_FOUND_MESSAGE  = "Not Found";
+	public static final String SUCCESS_STATUS = "successStatus";
+	
+	
+}
