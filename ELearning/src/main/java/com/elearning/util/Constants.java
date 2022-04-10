@@ -3,10 +3,16 @@ package com.elearning.util;
 public class Constants {
 
 	public static final String DATE_FORMAT = "dd-MM-yyyy";
+	public static final String DB_DATE_TIME_FORMAT = "DD-MM-YYYY HH24:MI:SS";
 	public static final String FILE_UPLOAD_FOLDER_FORMAT = "dd-MM-yyyy_HH-mm-ss-SSS";
 	public static final int BUFFER_SIZE = 4096;
 	
 	public static final String COURSE_VIEW = "course";
+	public static final String COURSE_DETAIL_VIEW = "courseDetail";
+	
+	public static final String COURSE_MATERIAL_VIEW = "courseMaterial";
+	public static final String COURSE_MATERIAL_DETAIL_VIEW = "courseMaterialDetail";
+	
 	public static final String LEARNER_VIEW = "learners";
 	public static final String LEARNER_DETAIL = "learnerDetail";
 	

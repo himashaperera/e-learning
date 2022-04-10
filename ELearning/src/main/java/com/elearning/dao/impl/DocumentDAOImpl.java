@@ -19,13 +19,15 @@ public class DocumentDAOImpl implements DocumentDAO{
 	private JdbcTemplate jdbcTemplate;
 	
 	public Integer createDocument(Document document) {
-		String sql = "insert into document11(id, name, location, createdAt, updatedAt) values(?, ?, ?, TO_DATE( ?, ?), TO_DATE( ?, ?))";
+		String sql = "insert into document(id, name, location, createdAt, updatedAt, docMaterialid) values(?, ?, ?, TO_DATE( ?, ?), TO_DATE( ?, ?), ?)";
 		
 		String createdAt = ELearningDateFormatter.formatDate(document.getCreatedAt());
 		String updatedAt = ELearningDateFormatter.formatDate(document.getUpdatedAt());
 		
 		int update = this.jdbcTemplate.update(sql, document.getId(), document.getName(),document.getLocation(),
-				createdAt, Constants.DATE_FORMAT, updatedAt, Constants.DATE_FORMAT);
+				createdAt, Constants.DATE_FORMAT, 
+				updatedAt, Constants.DATE_FORMAT, 
+				document.getCourseMaterial() == null ? null: document.getCourseMaterial().getId());
 		return update;
 	}
 
@@ -35,7 +37,7 @@ public class DocumentDAOImpl implements DocumentDAO{
 	}
 
 	public Document getDocumentById(Long id) {
-		String sql = "select * from document11 where id = ?";
+		String sql = "select * from document where id = ?";
 		List<Document> documentList = this.jdbcTemplate.query(sql, new DocumentRowMapper(), id);
 		if(documentList.isEmpty()) {
 			return null;
@@ -46,8 +48,14 @@ public class DocumentDAOImpl implements DocumentDAO{
 
 	public List<Document> getAllDocuments() {
 		
-		String sql = "select * from document11";
+		String sql = "select * from document";
 		List<Document> documentList = this.jdbcTemplate.query(sql, new DocumentRowMapper());
+		return documentList;
+	}
+
+	public List<Document> getDocumentsByCourseMaterialId(Long id) {
+		String sql = "select * from document where docMaterialid = ?";
+		List<Document> documentList = this.jdbcTemplate.query(sql, new DocumentRowMapper(), id);
 		return documentList;
 	}
 

@@ -17,6 +17,9 @@ public class Document implements Serializable {
 	private String location;
 	private Date createdAt;
 	private Date updatedAt;
+	private CourseMaterial courseMaterial;
+	private Assignment assignment;
+	
 	private MultipartFile document;
 
 	public Document() {
@@ -88,6 +91,23 @@ public class Document implements Serializable {
 
 	public void setDocument(MultipartFile document) {
 		this.document = document;
+	}
+	
+
+	public CourseMaterial getCourseMaterial() {
+		return courseMaterial;
+	}
+
+	public void setCourseMaterial(CourseMaterial courseMaterial) {
+		this.courseMaterial = courseMaterial;
+	}
+
+	public Assignment getAssignment() {
+		return assignment;
+	}
+
+	public void setAssignment(Assignment assignment) {
+		this.assignment = assignment;
 	}
 
 	@Override

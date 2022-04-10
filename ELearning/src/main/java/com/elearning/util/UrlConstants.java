@@ -9,6 +9,11 @@ public class UrlConstants {
 	public static final String CREATE_COURSE = "/courses";
 	public static final String UPDATE_COURSE = "/courses/update";
 	
+	public static final String GET_COURSE_MATERIAL = "/course-material/{id}";
+	public static final String GET_ALL_COURSE_MATERIAL  = "/course-material";
+	public static final String CREATE_COURSE_MATERIAL  = "/course-material";
+	public static final String UPDATE_COURSE_MATERIAL  = "/course-material/update";
+	
 	public static final String GET_LEARNER = "/learners/{id}";
 	public static final String ALL_LEARNERS = "/learners";
 	public static final String CREATE_LEARNER = "/learners/add";

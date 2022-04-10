@@ -1,9 +1,17 @@
 package com.elearning.model;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-public class CourseMaterial {
+import org.springframework.web.multipart.MultipartFile;
+
+public class CourseMaterial implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5138051948919512679L;
 
 	private Long id;
 	private String name;
@@ -11,6 +19,7 @@ public class CourseMaterial {
 	private Date updatedAt;
 	private Lesson lesson;
 	private List<Document> documentList;
+	private List<MultipartFile> documents;
 
 	public CourseMaterial() {
 		super();
@@ -25,6 +34,18 @@ public class CourseMaterial {
 		this.updatedAt = updatedAt;
 		this.lesson = lesson;
 		this.documentList = documentList;
+	}
+
+	public CourseMaterial(Long id, String name, Date createdAt, Date updatedAt, Lesson lesson,
+			List<Document> documentList, List<MultipartFile> documents) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.createdAt = createdAt;
+		this.updatedAt = updatedAt;
+		this.lesson = lesson;
+		this.documentList = documentList;
+		this.documents = documents;
 	}
 
 	public Long getId() {
@@ -73,6 +94,14 @@ public class CourseMaterial {
 
 	public void setDocumentList(List<Document> documentList) {
 		this.documentList = documentList;
+	}
+
+	public List<MultipartFile> getDocuments() {
+		return documents;
+	}
+
+	public void setDocuments(List<MultipartFile> documents) {
+		this.documents = documents;
 	}
 
 	@Override

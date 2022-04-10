@@ -10,4 +10,6 @@ public interface DocumentDAO {
 	Integer updateDocument(Document document);
 	Document getDocumentById(Long id);
 	List<Document> getAllDocuments();
+	List<Document> getDocumentsByCourseMaterialId(Long id);
+	
 }

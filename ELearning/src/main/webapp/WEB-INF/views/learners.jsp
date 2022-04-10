@@ -28,9 +28,18 @@
 	</form>
 	<div>
 		<% 
-		List<Learner> learners= (List<Learner>) request.getAttribute("learners");
 		
-		if( learners == null && learners.isEmpty()){ %>
+		if(request.getAttribute("learners") != null ){
+			
+			List<Learner> learners= (List<Learner>) request.getAttribute("learners");//[] [objc, ]
+				if(learners != null){
+					
+				}
+			if(learners.isEmpty()){
+			
+			
+			
+			%>
 		<p>No users found</p>
 		<%		
 		}else{
@@ -43,7 +52,11 @@
 		
 		<%} 
 		
-		}%>
+		}
+		
+		}
+		
+		%>
 	
 	</div>
 </body>
