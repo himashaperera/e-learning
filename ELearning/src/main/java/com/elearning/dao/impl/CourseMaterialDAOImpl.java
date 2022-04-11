@@ -75,4 +75,11 @@ public class CourseMaterialDAOImpl implements CourseMaterialDAO{
 		return updateCount;
 	}
 
+	@Override
+	public List<CourseMaterial> getAllCourseMaterialByLessonId(Long id) {
+		String sql = "select * from courseMaterial where lesnMaterialid = ? ";
+		List<CourseMaterial> courseMaterialList = this.jdbcTemplate.query(sql, new CourseMaterialRowMapper(), id);
+		return courseMaterialList;
+	}
+
 }

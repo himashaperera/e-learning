@@ -12,6 +12,10 @@ public class Constants {
 	public static final String COURSE_VIEW = "admin/course";
 	public static final String COURSE_DETAIL_VIEW = "admin/courseDetail";
 	
+	public static final String LESSON_VIEW = "admin/lesson";
+	public static final String LESSON_ADD_VIEW = "admin/lessonForm";
+	public static final String LESSON_DETAIL_VIEW = "admin/lessonDetail";
+	
 	public static final String COURSE_MATERIAL_VIEW = "courseMaterial";
 	public static final String COURSE_MATERIAL_DETAIL_VIEW = "courseMaterialDetail";
 	

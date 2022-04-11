@@ -9,6 +9,7 @@ public interface CourseMaterialService {
 	
 	CourseMaterial getCourseMaterialById(Long id) throws ApplicationException;
 	List<CourseMaterial> getAllCourseMaterial();
+	List<CourseMaterial> getAllCourseMaterialByLessonId(Long id);
 	void createCourseMaterial(CourseMaterial courseMaterial) throws ApplicationException;
 	void updateCourseMaterial(CourseMaterial courseMaterial) throws ApplicationException;
 	

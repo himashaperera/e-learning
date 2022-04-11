@@ -8,7 +8,9 @@ import org.springframework.stereotype.Service;
 import com.elearning.dao.CourseDAO;
 import com.elearning.model.Admin;
 import com.elearning.model.Course;
+import com.elearning.model.Lesson;
 import com.elearning.service.CourseService;
+import com.elearning.service.LessonService;
 import com.elearning.util.ApplicationException;
 import com.elearning.util.Constants;
 
@@ -17,6 +19,8 @@ public class CourseServiceImpl implements CourseService{
 
 	@Autowired
 	private CourseDAO courseDAO;
+	@Autowired
+	private LessonService LessonService;
 	
 	@Override
 	public void createCourse(Course course) throws ApplicationException {
@@ -40,6 +44,8 @@ public class CourseServiceImpl implements CourseService{
 		Course courseById = this.courseDAO.getCourseById(id);
 		if(courseById == null)
 			throw new ApplicationException(Constants.NOT_FOUND_MESSAGE);
+		List<Lesson> lessonByCourseId = LessonService.getLessonByCourseId(courseById.getId());
+		courseById.setLessonList(lessonByCourseId);
 		return courseById;
 	}
 

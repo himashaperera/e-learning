@@ -1,7 +1,6 @@
 package com.elearning.serviceImpl;
 
 import java.util.Date;
-import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -75,6 +74,16 @@ public class CourseMaterialServiceImpl implements CourseMaterialService{
 
 	public void updateCourseMaterial(CourseMaterial courseMaterial) throws ApplicationException {
 		
+	}
+
+	@Override
+	public List<CourseMaterial> getAllCourseMaterialByLessonId(Long id) {
+		List<CourseMaterial> allCourseMaterialByLessonId = this.courseMaterialDAO.getAllCourseMaterialByLessonId(id);
+		for (CourseMaterial courseMaterial : allCourseMaterialByLessonId) {
+			List<Document> documentsByCourseMaterialId = this.documentDAO.getDocumentsByCourseMaterialId(courseMaterial.getId());
+			courseMaterial.setDocumentList(documentsByCourseMaterialId);
+		}
+		return allCourseMaterialByLessonId;
 	}
 
 }

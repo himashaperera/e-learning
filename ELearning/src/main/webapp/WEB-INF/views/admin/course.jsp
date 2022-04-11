@@ -102,7 +102,7 @@
 					<td><%=course.getStartDate() %></td>
 					<td><%=course.getEndDate() %></td>
 					<td>
-						<a href="#">
+						<a href=<%="courses/" + course.getId() %> >
 							<button class="btn btn-success">View</button>
 						</a>
 					</td>

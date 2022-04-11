@@ -8,6 +8,7 @@ public interface CourseMaterialDAO {
 
 	CourseMaterial getCourseMaterialById(Long id);
 	List<CourseMaterial> getAllCourseMaterial();
+	List<CourseMaterial> getAllCourseMaterialByLessonId(Long id);
 	Long createCourseMaterial(CourseMaterial courseMaterial);
 	Integer updateteCourseMaterial(CourseMaterial courseMaterial);
 }
