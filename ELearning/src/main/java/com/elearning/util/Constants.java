@@ -28,7 +28,10 @@ public class Constants {
 	public static final String LEARNER_VIEW = "learners";
 	public static final String LEARNER_DETAIL = "learnerDetail";
 	
+    public static final String FEEDBACK_VIEW = "feedbacks";
+	public static final String FEEDBACK_DETAIL = "feedbackDetail";
 	
+
 	
 	public static final String UPDATE_SUCCESS_MESSAGE = "Updated Successfully";
 	public static final String CREATE_SUCCESS_MESSAGE  = "Added Successfully";
@@ -37,6 +40,10 @@ public class Constants {
 	public static final String NOT_FOUND_MESSAGE  = "Not Found";
 	public static final String SUCCESS_STATUS = "successStatus";
 	public static final String STATUS = "sStatus";
+	
+	public static final String LECTURER_VIEW = "lecturers";
+	public static final String LECTURER_DETAIL = "lecturerDetail";
+	
 	
 	
 }
