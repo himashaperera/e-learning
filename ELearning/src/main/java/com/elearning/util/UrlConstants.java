@@ -41,8 +41,10 @@ public class UrlConstants {
 	public static final String CREATE_LECTURER = "/lecturers/add";
 	public static final String UPDATE_LECTURER = "/lecturers/update";
 	
-	
-	
+	public static final String GET_NOTICE = "/notices/{id}";
+	public static final String ALL_NOTICES = "/notices";
+	public static final String CREATE_NOTICE = "/notices";
+	public static final String UPDATE_NOTICE = "/notices/update";
 	
 	
 }

@@ -43,6 +43,9 @@ public class Constants {
 	
 	public static final String LECTURER_VIEW = "lecturers";
 	public static final String LECTURER_DETAIL = "lecturerDetail";
+
+	public static final String NOTICE_VIEW = "notices";
+	public static final String NOTICE_DETAIL = "noticeDetails";
 	
 	
 	
