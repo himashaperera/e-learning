@@ -35,5 +35,9 @@ public class Constants {
 	public static final String SUCCESS_STATUS = "successStatus";
 	public static final String STATUS = "sStatus";
 	
+	public static final String LECTURER_VIEW = "lecturers";
+	public static final String LECTURER_DETAIL = "lecturerDetail";
+	
+	
 	
 }

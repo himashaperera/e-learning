@@ -30,6 +30,12 @@ public class UrlConstants {
 	public static final String DOCUMENT_DOWNLOAD_BY_ID = "/download/{id}";
 	public static final String GET_ALL_DOCUMENTS =  "/document";
 	
+	public static final String GET_LECTURER = "/lecturers/{id}";
+	public static final String ALL_LECTURERS = "/lecturers";
+	public static final String CREATE_LECTURER = "/lecturers/add";
+	public static final String UPDATE_LECTURER = "/lecturers/update";
+	
+	
 	
 	
 	
