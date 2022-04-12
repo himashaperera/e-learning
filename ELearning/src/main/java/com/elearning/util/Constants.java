@@ -1,6 +1,11 @@
 package com.elearning.util;
 
 public class Constants {
+	
+	
+	public static final String UPLOADED_FOLDER = "D://temp//";
+	public static final String DOCUMENT_DETAIL = "documentDetail";
+	public static final String DOCUMENT_VIEW = "document";
 
 	public static final String DATE_FORMAT = "dd-MM-yyyy";
 	public static final String DATE_FORMAT_HTML = "yyyy-MM-dd";
@@ -11,9 +16,10 @@ public class Constants {
 	
 	public static final String COURSE_VIEW = "admin/course";
 	public static final String COURSE_DETAIL_VIEW = "admin/courseDetail";
+	public static final String COURSE_UPDATE_FORM_VIEW = "admin/courseUpdateForm";
 	
-	public static final String LESSON_VIEW = "admin/lesson";
 	public static final String LESSON_ADD_VIEW = "admin/lessonForm";
+	public static final String LESSON_VIEW = "admin/lesson";
 	public static final String LESSON_DETAIL_VIEW = "admin/lessonDetail";
 	
 	public static final String COURSE_MATERIAL_VIEW = "courseMaterial";
@@ -22,11 +28,7 @@ public class Constants {
 	public static final String LEARNER_VIEW = "learners";
 	public static final String LEARNER_DETAIL = "learnerDetail";
 	
-	public static final String DOCUMENT_DETAIL = "documentDetail";
-	public static final String DOCUMENT_VIEW = "document";
-	public static final String UPLOADED_FOLDER = "D://temp//";
-
-        public static final String FEEDBACK_VIEW = "feedbacks";
+    public static final String FEEDBACK_VIEW = "feedbacks";
 	public static final String FEEDBACK_DETAIL = "feedbackDetail";
 	
 

@@ -114,8 +114,13 @@
 
 			</div>
 
-			<div>
+			<div class="float-end">
 				<input type="submit" class="btn btn-primary" value="Add" />
+								
+				<a href=<%="/ELearning/courses/"+course.getId() %>>
+				<button type="button" class="btn btn-info">Go Back</button>
+				
+				</a>
 			</div>
 
 		</form>

@@ -25,7 +25,7 @@ public class CourseDAOImpl implements CourseDAO{
 	public Long createCourse(Course course) {
 		
 		String sql = "insert into course(courseId, courseName, description, code, duration, startDate, endDate) "
-				+ "values(?, ?, ?, ?, TO_DATE(?, ?), TO_DATE(?, ?),TO_DATE(?, ?))";
+				+ "values(?, ?, ?, ?, ?, TO_DATE(?, ?),TO_DATE(?, ?))";
 	    KeyHolder keyHolder = new GeneratedKeyHolder();
 	    this.jdbcTemplate.update(connection -> {
 	        PreparedStatement ps = connection
@@ -38,12 +38,11 @@ public class CourseDAOImpl implements CourseDAO{
 	          ps.setString(2, course.getName());
 	          ps.setString(3, course.getDescription());
 	          ps.setString(4, course.getCode());
-	          ps.setString(5, course.getStartDate());
-	          ps.setString(6, Constants.DB_DATE_FORMAT);
-	          ps.setString(7, course.getStartDate());
-	          ps.setString(8, Constants.DB_DATE_FORMAT);
-	          ps.setString(9, course.getEndDate());
-	          ps.setString(10, Constants.DB_DATE_FORMAT);
+	          ps.setLong(5, course.getDuration());
+	          ps.setString(6, course.getStartDate());
+	          ps.setString(7, Constants.DB_DATE_FORMAT);
+	          ps.setString(8, course.getEndDate());
+	          ps.setString(9, Constants.DB_DATE_FORMAT);
 	          return ps;
 	        }, keyHolder);
 	    
@@ -53,11 +52,14 @@ public class CourseDAOImpl implements CourseDAO{
 	}
 
 	@Override
-	public Long updateCourse(Course course) {
-		String sql = "update course set courseName=?, description=?, code=?, duration=?, startDate=?, endDate=? where courseId = ?";
+	public Integer updateCourse(Course course) {
+		String sql = "update course set courseName=?, description=?, code=?, duration=?, startDate=TO_DATE(?, ?), endDate=TO_DATE(?, ?) where courseId = ?";
 		int update = this.jdbcTemplate.update(sql, course.getName(), course.getDescription(), course.getCode(), 
-				course.getDuration(), course.getStartDate(), course.getEndDate(), course.getId());
-		return (long)update;
+				course.getDuration(),
+				course.getStartDate(),Constants.DB_DATE_FORMAT,
+				course.getEndDate(), Constants.DB_DATE_FORMAT,
+				course.getId());
+		return update;
 	}
 
 	@Override

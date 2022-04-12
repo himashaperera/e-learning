@@ -1,6 +1,5 @@
 package com.elearning.model;
 
-import java.util.Date;
 import java.util.List;
 
 public class Course {
@@ -9,7 +8,7 @@ public class Course {
 	private String name;
 	private String description;
 	private String code;
-	private String duration;
+	private Long duration;
 	private String startDate;
 	private String endDate;
 	private Admin createdBy;
@@ -24,7 +23,7 @@ public class Course {
 	}
 
 	
-	public Course(Long id, String name, String description, String code, String duration, String startDate, String endDate,
+	public Course(Long id, String name, String description, String code, Long duration, String startDate, String endDate,
 			Admin createdBy) {
 		super();
 		this.id = id;
@@ -38,7 +37,7 @@ public class Course {
 	}
 
 
-	public Course(Long id, String name, String description, String code, String duration, String startDate, String endDate,
+	public Course(Long id, String name, String description, String code, Long duration, String startDate, String endDate,
 			Admin createdBy, List<Trainer> trainersList, List<Feedback> feedbackList, List<Learner> learnersList,
 			List<Lesson> lessonList) {
 		super();
@@ -97,12 +96,12 @@ public class Course {
 	}
 
 
-	public String getDuration() {
+	public Long getDuration() {
 		return duration;
 	}
 
 
-	public void setDuration(String duration) {
+	public void setDuration(Long duration) {
 		this.duration = duration;
 	}
 
@@ -175,10 +174,6 @@ public class Course {
 	public void setLessonList(List<Lesson> lessonList) {
 		this.lessonList = lessonList;
 	}
-
-//	public Long calculateDuration() {
-//		return (this.endDate.getTime() - this.startDate.getTime()) * 1000/(60*60*24);
-//	}
 
 	@Override
 	public String toString() {
