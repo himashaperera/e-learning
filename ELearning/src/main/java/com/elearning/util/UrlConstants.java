@@ -5,9 +5,10 @@ public class UrlConstants {
 	public static final String REDIRECT = "redirect:";
 	
 	public static final String GET_COURSE = "/courses/{id}";
+	public static final String GET_UPDATE_COURSE_FORM = "/courses/{id}/update";
 	public static final String ALL_COURSES = "/courses";
 	public static final String CREATE_COURSE = "/courses";
-	public static final String UPDATE_COURSE = "/courses/update";
+	public static final String UPDATE_COURSE = "courses/{id}/update";
 	
 	public static final String GET_COURSE_MATERIAL = "/course-material/{id}";
 	public static final String GET_ALL_COURSE_MATERIAL  = "/course-material";

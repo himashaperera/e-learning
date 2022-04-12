@@ -61,8 +61,6 @@ public class CourseMaterialDAOImpl implements CourseMaterialDAO{
 	          return ps;
 	        }, keyHolder);
 	    
-	    	System.out.println(keyHolder.getKey());
-	    	System.out.println(keyHolder.getKey().longValue());
 	        return keyHolder.getKey().longValue();
 	        
 	}

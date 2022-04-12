@@ -85,8 +85,8 @@
 					<div id="descriptionSupport" class="form-text">optional</div>
 				</div>
 
-				<div>
-					<input type="submit" class="btn btn-primary" value="Add" />
+				<div class="float-end">
+					<input type="submit" class="btn btn-primary" value="Add Course" />
 				</div>
 
 			</form>
@@ -138,9 +138,10 @@
 					<th span="col">#</th>
 					<th span="col">Name</th>
 					<th span="col">Code</th>
+					<th span="col">Duration <small>(days)</small></th>
 					<th span="col">Start Date</th>
 					<th span="col">End Date</th>
-					<th span="col">Actions</th>
+					<th span="col" colspan="2">Actions</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -161,11 +162,15 @@
 					<th span="row"><%=course.getId()%></th>
 					<td><%=course.getName()%></td>
 					<td><%=course.getCode()%></td>
+					<td style="text-align: center;"><%=course.getDuration() %></td>
 					<td><%=course.getStartDate()%></td>
 					<td><%=course.getEndDate()%></td>
-					<td><a href=<%="courses/" + course.getId()%>>
-							<button class="btn btn-success">View</button>
-					</a></td>
+					<td>
+						<a href=<%="/ELearning/courses/" +course.getId()+"/update" %>><button class="btn btn-danger ml-2">Update</button></a>
+					</td>
+					<td>
+						<a href=<%="/ELearning/courses/"+ course.getId()%>><button class="btn btn-success">View</button></a>
+					</td>
 				</tr>
 
 				<%
