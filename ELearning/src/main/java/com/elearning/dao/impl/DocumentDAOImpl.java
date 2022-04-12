@@ -19,7 +19,7 @@ public class DocumentDAOImpl implements DocumentDAO{
 	private JdbcTemplate jdbcTemplate;
 	
 	public Integer createDocument(Document document) {
-		String sql = "insert into document(id, name, location, createdAt, updatedAt, docMaterialid) values(?, ?, ?, TO_DATE( ?, ?), TO_DATE( ?, ?), ?)";
+		String sql = "insert into document(id, name, location, createdAt, updatedAt, docMaterialid, docAssignid) values(?, ?, ?, TO_DATE( ?, ?), TO_DATE( ?, ?), ?, ?)";
 		
 		String createdAt = ELearningDateFormatter.formatDate(document.getCreatedAt());
 		String updatedAt = ELearningDateFormatter.formatDate(document.getUpdatedAt());
@@ -27,14 +27,11 @@ public class DocumentDAOImpl implements DocumentDAO{
 		int update = this.jdbcTemplate.update(sql, document.getId(), document.getName(),document.getLocation(),
 				createdAt, Constants.DATE_FORMAT, 
 				updatedAt, Constants.DATE_FORMAT, 
-				document.getCourseMaterial() == null ? null: document.getCourseMaterial().getId());
+				document.getCourseMaterial() == null ? null: document.getCourseMaterial().getId(), 
+				document.getAssignment() == null ? null: document.getAssignment().getId());
 		return update;
 	}
 
-	public Integer updateDocument(Document document) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	public Document getDocumentById(Long id) {
 		String sql = "select * from document where id = ?";

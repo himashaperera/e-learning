@@ -40,7 +40,6 @@ public class DocumentController {
 	@RequestMapping(path = UrlConstants.GET_ALL_DOCUMENTS, method = RequestMethod.GET)
 	public String getAllDocuments(Model model) {
 		List<Document> allDocuments = this.documentService.getAllDocuments();
-		System.out.println(allDocuments);
 		model.addAttribute("documentList", allDocuments);
 		return Constants.DOCUMENT_VIEW;
 	}

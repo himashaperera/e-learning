@@ -36,8 +36,7 @@ public class DocumentServiceImpl implements DocumentService {
 			System.out.println(tempFolder.getName());
 
 			if (!tempFolder.exists()) {
-				boolean mkdir = tempFolder.mkdir();
-				System.out.println(tempFolder.getAbsolutePath());
+				tempFolder.mkdir();
 				System.out.println("temp folder created successfully..");
 			}
 
@@ -48,7 +47,6 @@ public class DocumentServiceImpl implements DocumentService {
 			System.out.println(uploadFolder.getAbsolutePath());
 
 			String fileName = multipartFile.getOriginalFilename();
-			System.out.println(fileName);
 			File imageFile = new File(uploadFolder, fileName);
 			String absolutePath = imageFile.getAbsolutePath();
 			try {

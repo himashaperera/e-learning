@@ -9,9 +9,9 @@ public class Course {
 	private String name;
 	private String description;
 	private String code;
-	private Date duration;
-	private Date startDate;
-	private Date endDate;
+	private String duration;
+	private String startDate;
+	private String endDate;
 	private Admin createdBy;
 	private List<Trainer> trainersList;
 	private List<Feedback> feedbackList;
@@ -24,7 +24,7 @@ public class Course {
 	}
 
 	
-	public Course(Long id, String name, String description, String code, Date duration, Date startDate, Date endDate,
+	public Course(Long id, String name, String description, String code, String duration, String startDate, String endDate,
 			Admin createdBy) {
 		super();
 		this.id = id;
@@ -38,7 +38,7 @@ public class Course {
 	}
 
 
-	public Course(Long id, String name, String description, String code, Date duration, Date startDate, Date endDate,
+	public Course(Long id, String name, String description, String code, String duration, String startDate, String endDate,
 			Admin createdBy, List<Trainer> trainersList, List<Feedback> feedbackList, List<Learner> learnersList,
 			List<Lesson> lessonList) {
 		super();
@@ -97,32 +97,32 @@ public class Course {
 	}
 
 
-	public Date getDuration() {
+	public String getDuration() {
 		return duration;
 	}
 
 
-	public void setDuration(Date duration) {
+	public void setDuration(String duration) {
 		this.duration = duration;
 	}
 
 
-	public Date getStartDate() {
+	public String getStartDate() {
 		return startDate;
 	}
 
 
-	public void setStartDate(Date startDate) {
+	public void setStartDate(String startDate) {
 		this.startDate = startDate;
 	}
 
 
-	public Date getEndDate() {
+	public String getEndDate() {
 		return endDate;
 	}
 
 
-	public void setEndDate(Date endDate) {
+	public void setEndDate(String endDate) {
 		this.endDate = endDate;
 	}
 
@@ -176,6 +176,9 @@ public class Course {
 		this.lessonList = lessonList;
 	}
 
+//	public Long calculateDuration() {
+//		return (this.endDate.getTime() - this.startDate.getTime()) * 1000/(60*60*24);
+//	}
 
 	@Override
 	public String toString() {

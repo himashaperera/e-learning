@@ -1,16 +1,20 @@
 package com.elearning.model;
 
-import java.util.Date;
+import java.io.Serializable;
 import java.util.List;
 
-public class Lesson {
+public class Lesson implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8587040121212148363L;
 	private Long id;
 	private String name;
 	private String description;
-	private Date duration;
-	private Date startDate;
-	private Date endDate;
+	private String duration;
+	private String startDate;
+	private String endDate;
 	private Course course;
 	private List<CourseMaterial> courseMaterialList;
 	private List<Assignment> assignmentList;
@@ -19,7 +23,7 @@ public class Lesson {
 		super();
 	}
 
-	public Lesson(Long id, String name, String description, Date duration, Date startDate, Date endDate, Course course,
+	public Lesson(Long id, String name, String description, String duration, String startDate, String endDate, Course course,
 			List<CourseMaterial> courseMaterialList) {
 		super();
 		this.id = id;
@@ -32,7 +36,7 @@ public class Lesson {
 		this.courseMaterialList = courseMaterialList;
 	}
 
-	public Lesson(Long id, String name, String description, Date duration, Date startDate, Date endDate, Course course,
+	public Lesson(Long id, String name, String description, String duration, String startDate, String endDate, Course course,
 			List<CourseMaterial> courseMaterialList, List<Assignment> assignmentList) {
 		super();
 		this.id = id;
@@ -70,27 +74,27 @@ public class Lesson {
 		this.description = description;
 	}
 
-	public Date getDuration() {
+	public String getDuration() {
 		return duration;
 	}
 
-	public void setDuration(Date duration) {
+	public void setDuration(String duration) {
 		this.duration = duration;
 	}
 
-	public Date getStartDate() {
+	public String getStartDate() {
 		return startDate;
 	}
 
-	public void setStartDate(Date startDate) {
+	public void setStartDate(String startDate) {
 		this.startDate = startDate;
 	}
 
-	public Date getEndDate() {
+	public String getEndDate() {
 		return endDate;
 	}
 
-	public void setEndDate(Date endDate) {
+	public void setEndDate(String endDate) {
 		this.endDate = endDate;
 	}
 
