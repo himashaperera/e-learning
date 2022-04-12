@@ -33,6 +33,7 @@ public class Constants {
 	public static final String CREATE_ERROR_MESSAGE  = "Error occured during creation";
 	public static final String NOT_FOUND_MESSAGE  = "Not Found";
 	public static final String SUCCESS_STATUS = "successStatus";
+	public static final String STATUS = "sStatus";
 	
 	
 }

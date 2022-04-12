@@ -1,6 +1,5 @@
 package com.elearning.dao.impl;
 
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.Types;
 import java.util.List;
@@ -45,12 +44,6 @@ public class CourseDAOImpl implements CourseDAO{
 	          ps.setString(8, Constants.DB_DATE_FORMAT);
 	          ps.setString(9, course.getEndDate());
 	          ps.setString(10, Constants.DB_DATE_FORMAT);
-	        
-//	          if(course.getCreatedBy() == null)
-//	        	  ps.setNull(11, Types.NULL);
-//	          else
-//	        	  ps.setLong(11, course.getCreatedBy().getId());
-	          
 	          return ps;
 	        }, keyHolder);
 	    
@@ -62,7 +55,9 @@ public class CourseDAOImpl implements CourseDAO{
 	@Override
 	public Long updateCourse(Course course) {
 		String sql = "update course set courseName=?, description=?, code=?, duration=?, startDate=?, endDate=? where courseId = ?";
-		return null;
+		int update = this.jdbcTemplate.update(sql, course.getName(), course.getDescription(), course.getCode(), 
+				course.getDuration(), course.getStartDate(), course.getEndDate(), course.getId());
+		return (long)update;
 	}
 
 	@Override

@@ -36,7 +36,6 @@ public class CourseMaterialController {
 			model.addAttribute("courseMaterial", courseMaterial);
 		} catch (ApplicationException e) {
 			model.addAttribute(Constants.SUCCESS_STATUS, e.getMessage());
-			e.printStackTrace();
 		}
 		return Constants.COURSE_MATERIAL_DETAIL_VIEW;
 		
@@ -61,7 +60,6 @@ public class CourseMaterialController {
 			model.addAttribute(Constants.SUCCESS_STATUS, Constants.UPDATE_SUCCESS_MESSAGE);
 		} catch (ApplicationException e) {
 			model.addAttribute(Constants.SUCCESS_STATUS, e.getMessage());
-			e.printStackTrace();
 		}
 		return Constants.COURSE_MATERIAL_DETAIL_VIEW;
 		

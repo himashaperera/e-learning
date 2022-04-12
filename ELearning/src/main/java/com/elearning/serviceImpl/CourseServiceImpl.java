@@ -34,10 +34,6 @@ public class CourseServiceImpl implements CourseService{
 			throw new ApplicationException(Constants.CREATE_ERROR_MESSAGE);
 	}
 
-	@Override
-	public void updateCourse(Course course) throws ApplicationException {
-		
-	}
 
 	@Override
 	public Course getCourseById(Long id) throws ApplicationException {

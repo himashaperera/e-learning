@@ -8,7 +8,6 @@ import com.elearning.util.ApplicationException;
 public interface CourseService {
 
 	void createCourse(Course course) throws ApplicationException;
-	void updateCourse(Course course) throws ApplicationException;
 	Course getCourseById(Long id) throws ApplicationException;
 	List<Course> getAllCourses();
 }

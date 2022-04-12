@@ -38,12 +38,6 @@ public class LessonServiceImpl implements LessonService{
 	}
 
 	@Override
-	public void updateLesson(Lesson lesson) throws ApplicationException{
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public Lesson getLessonById(Long id) throws ApplicationException{
 		
 		Lesson lessonById = this.lessonDAO.getLessonById(id);

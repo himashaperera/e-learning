@@ -20,16 +20,15 @@
 		<%
 		Course course = (Course) request.getAttribute("course");
 		%>
-		<form class="form" action="add" method="post" enctype="multipart/form-data">
+		<form class="form needs-validation" action="add" method="post" enctype="multipart/form-data" novalidate>
 
 			<div class="row">
 				<div class="col mb-2">
 					<label for="name" class="form-label">Lesson Name</label> <input
 						type="text" id="name" name="name"
 						class="form-control form-control-sm"
-						aria-describedby="courseNameSupport" />
-					<div id="courseNameSupport" class="form-text text-info">cannot
-						be empty</div>
+						aria-describedby="courseNameSupport" required/>
+					<div class="invalid-feedback">Lesson Name cannot be empty</div>
 				</div>
 
 				<div class="col mb-2">
@@ -47,15 +46,15 @@
 				<div class="col mb-2">
 					<label for="startDate" class="form-label">Start Date</label> <input
 						type="date" id="startDate" name="startDate"
-						class="form-control form-control-sm" aria-describedby="" />
-					<div id="" class="form-text"></div>
+						class="form-control form-control-sm" aria-describedby="" required/>
+					<div class="invalid-feedback">start date cannot be empty</div>
 				</div>
 
 				<div class="col mb-2">
 					<label for="endDate" class="form-label">End Date</label> <input
 						type="date" id="endDate" name="endDate"
-						class="form-control form-control-sm" aria-describedby="" />
-					<div id="" class="form-text"></div>
+						class="form-control form-control-sm" aria-describedby="" required/>
+					<div class="invalid-feedback">end date cannot be empty</div>
 				</div>
 			</div>
 
@@ -125,7 +124,7 @@
 	<script>
 	
 		function addCourseMaterialFeild(){
-			alert("btn clicked");
+			
 			var count = document.getElementById("cm-body").childElementCount;
 			console.log(count);
 			var literal = `<div class="row" id="${"cm-"+count }"><div class="col-md-5 mb-2">
@@ -151,5 +150,27 @@
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
 		crossorigin="anonymous"></script>
+		
+		<script>
+		(function() {
+			'use strict'
+
+			// Fetch all the forms we want to apply custom Bootstrap validation styles to
+			var forms = document.querySelectorAll('.needs-validation')
+
+			// Loop over them and prevent submission
+			Array.prototype.slice.call(forms).forEach(function(form) {
+				form.addEventListener('submit', function(event) {
+					if (!form.checkValidity()) {
+						event.preventDefault()
+						event.stopPropagation()
+					}
+
+					form.classList.add('was-validated')
+				}, false)
+			})
+		})()
+	</script>
+	
 </body>
 </html>

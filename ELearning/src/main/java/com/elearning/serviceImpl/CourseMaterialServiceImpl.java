@@ -73,7 +73,10 @@ public class CourseMaterialServiceImpl implements CourseMaterialService{
 	}
 
 	public void updateCourseMaterial(CourseMaterial courseMaterial) throws ApplicationException {
-		
+		Integer updateCount = this.courseMaterialDAO.updateteCourseMaterial(courseMaterial);
+		if(updateCount < 0) {
+			throw new ApplicationException(Constants.UPDATE_ERROR_MESSAGE);
+		}
 	}
 
 	@Override

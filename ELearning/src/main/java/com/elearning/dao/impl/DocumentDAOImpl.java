@@ -32,10 +32,6 @@ public class DocumentDAOImpl implements DocumentDAO{
 		return update;
 	}
 
-	public Integer updateDocument(Document document) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	public Document getDocumentById(Long id) {
 		String sql = "select * from document where id = ?";

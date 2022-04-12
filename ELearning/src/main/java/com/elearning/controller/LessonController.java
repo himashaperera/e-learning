@@ -44,16 +44,6 @@ public class LessonController {
 		}
 		return UrlConstants.REDIRECT + UrlConstants.ALL_COURSES + "/" + lesson.getCourse().getId();
 	}
-
-	@RequestMapping(path=UrlConstants.UPDATE_LESSON, method=RequestMethod.POST)
-	public String updateLesson(@ModelAttribute Lesson lesson, Model model) {
-		try {
-			this.lessonService.updateLesson(lesson);
-		} catch (ApplicationException e) {
-			e.printStackTrace();
-		}
-		return UrlConstants.REDIRECT + UrlConstants.ALL_COURSES + "/" + lesson.getCourse().getId();
-	}
 	
 	@RequestMapping(path=UrlConstants.ALL_LESSON, method=RequestMethod.GET)
 	public String getAllLesson( Model model) {
