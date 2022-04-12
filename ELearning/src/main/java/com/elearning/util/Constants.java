@@ -25,7 +25,11 @@ public class Constants {
 	public static final String DOCUMENT_DETAIL = "documentDetail";
 	public static final String DOCUMENT_VIEW = "document";
 	public static final String UPLOADED_FOLDER = "D://temp//";
+
+        public static final String FEEDBACK_VIEW = "feedbacks";
+	public static final String FEEDBACK_DETAIL = "feedbackDetail";
 	
+
 	
 	public static final String UPDATE_SUCCESS_MESSAGE = "Updated Successfully";
 	public static final String CREATE_SUCCESS_MESSAGE  = "Added Successfully";

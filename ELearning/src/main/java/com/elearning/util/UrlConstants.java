@@ -29,6 +29,11 @@ public class UrlConstants {
 	public static final String DOCUMENT_UPLOAD = "/upload";
 	public static final String DOCUMENT_DOWNLOAD_BY_ID = "/download/{id}";
 	public static final String GET_ALL_DOCUMENTS =  "/document";
+
+	public static final String GET_FEEDBACK = "/feedbacks/{id}";
+	public static final String ALL_FEEDBACKS = "/feedbacks";
+	public static final String CREATE_FEEDBACK = "/feedbacks/add";
+	public static final String UPDATE_FEEDBACK = "/feedbacks/update";
 	
 	
 	
