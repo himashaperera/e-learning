@@ -101,6 +101,8 @@
 	
 	
 	<style>  
+	
+	/* inline css */ .
 
 .button {
   background-color: #4CAF50;
