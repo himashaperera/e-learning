@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.elearning.dao.LessonDAO;
 import com.elearning.model.CourseMaterial;
@@ -23,17 +24,19 @@ public class LessonServiceImpl implements LessonService{
 	private CourseMaterialService courseMaterialService;
 	
 	@Override
+	@Transactional
 	public void createLesson(Lesson lesson) throws ApplicationException{
 		
-		//do
 		Long generatedId = this.lessonDAO.createLesson(lesson);
 		if(generatedId == null)
 				throw new ApplicationException(Constants.CREATE_ERROR_MESSAGE);
 		lesson.setId(generatedId);
 		List<CourseMaterial> courseMaterialList = lesson.getCourseMaterialList();
-		for (CourseMaterial courseMaterial : courseMaterialList) {
-			courseMaterial.setLesson(lesson);
-			this.courseMaterialService.createCourseMaterial(courseMaterial);
+		if(!courseMaterialList.get(0).getName().equals("")) {
+			for (CourseMaterial courseMaterial : courseMaterialList) {
+				courseMaterial.setLesson(lesson);
+				this.courseMaterialService.createCourseMaterial(courseMaterial);
+			}
 		}
 	}
 
