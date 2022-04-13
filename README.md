@@ -25,8 +25,11 @@ Project Set Up
 3. Update the maven project to install all dependecies.
 4. Change project complaince level to java 1.8 from: right clicking on project -> properties -> project facets -> select java 1.8 -> click apply and apply and close
 5. Download Apache Tomcat Server 9.0 and change the server port to port: 8085
-6. Run the DB Script and change username and password feilds of bean named dataSource to your credentials.
-7. Change the folder upload location of mentioned as UPLOAD_FOLDER in Constants.java(com.elearning.util package) to a folder location in your computer.
-8. Run the project as;
+6. Right click on project -> go to properties -> select targeted runtimes -> check Apache Tomcat Server -> click on Apply and Apply and Close
+7. Run the DB Script and change username and password feilds of bean named dataSource to your credentials.
+8. Change the folder upload location of mentioned as UPLOAD_FOLDER in Constants.java(com.elearning.util package) to a folder location in your computer.
+9. Run the project as;
     right click on project -> Run as -> Run on Server -> select Apache Tomcat Server v9.0 at localhost -> add the project to server and click finish.
+10. Project should run on the url: http://localhost:8085/ELearning/
+
 
