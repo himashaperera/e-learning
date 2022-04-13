@@ -5,34 +5,31 @@
 <html>
 <head>
 
-<meta charset="utf-8">
 	
 </head>
 <body>
 
+
 <center><p style="font-size: 30px ; color:#035491; padding: 30px">ADD YOUR FEEDBACK</p></center>
-	
+
+<div class="cc">	
    <form action="feedbacks/add" method="post">
 			
-         <div style="padding-left:450px ; font-size: 18px " >
+         <div style="padding-left:50px ;padding: 30px ; font-size: 18px " >
 		
 				<label>Id</label><br>
-				<input type="text" id="id" name="id" style="width:50% ; height:8%" required="required"> <br><br>  
+				<input type="text" id="id" name="id" style="width:100% ; height:8%" required="required"> <br><br>  
 		
 				<label>Name</label><br>
-				<input type="text" id="learner " name="learner"  style="width: 50% ; height:8%" required="required"><br><br>
+				<input type="text" id="learner " name="learner"  style="width: 100% ; height:8%" required="required"><br><br>
 			
 				<label>Course</label><br>
-				<input type="text" id="course " name="course" style="width: 50% ; height:8%" required="required"><br><br>
+				<input type="text" id="course " name="course" style="width: 100% ; height:8%" required="required"><br><br>
 				
 				<label>Feedback</label><br>
-			    <input type="text" id="content " name="content" style="width: 50% ; height:15%" required="required"><br><br>
+			    <input type="text" id="content " name="content" style="width: 100% ; height:15%" required="required"><br><br>
 				
-					
-	<!-- 	
-	<textarea id="content " name="content " style="width: 50%" required="required" ></textarea><br><br> 	
-    
-    -->
+
 						
 	<div style="padding-left:100px">	
 	<input type="submit" value="submit your feedback" style="height: 10% ; background-color:#91fff8 ; border: none; padding: 5px 25px;
@@ -41,7 +38,8 @@
     </div>
     
     </form>
-			
+ </div>			
+
 
 	 <h2 style="color:#025778 ; padding-left:35px " >Learners Feedbacks</h2> 
 	
@@ -89,19 +87,18 @@
 		}
 	%>
 	
- <style>  
-
-.button {
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+ <style> 
+  
+ .cc{
+	height: 400px;
+	width: 500px;
+	height: 400px;
+	border-radius: 10px;
+	justify-content: center;
+	box-shadow: 1px 1px 20px rgba(0,0,0,0.4);
+	background: #fff;
+	margin-left:415px;
  }
- 
 	
  table#t01 {  
     width: 100%;  
