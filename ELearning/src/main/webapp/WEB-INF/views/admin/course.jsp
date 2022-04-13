@@ -40,7 +40,7 @@
 
 			}
 			%>
-			<form class="form needs-validation" action="courses" method="post"
+			<form class="form needs-validation" action="/ELearning/courses/" method="post"
 				novalidate>
 				<div class="row">
 
