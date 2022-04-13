@@ -2,13 +2,30 @@
 
 A system which facilitates academic needs of a university due to covid-19 pandemic situation.
 
-Expected functionalities of the system are as follows;
-* adding new course material by the lecturers - viewing and downloading course material for students
-* submitting assignments - adding feed back to assignments
-* adding new users, roles and courses to the system - admin panel
-* student self enrollment to course modules and (adding new courses to the system  - admin panel)
-* Quiz making for students
+Functionalities of the system are as follows;
+* adding new courses and lessons to courses.
+* upload and download of course material
+* adding new users and roles to the system
+* enables learners to attempt quizzes
+* adding feedback to courses
+* adding notices
 
-
-Backend   -  Spring MVC, MySQL
+Backend   -  Spring MVC, Spring JDBC with Oracle SQL Server
 Front end - HTML, CSS, JS, Bootstrap
+
+Tools
+* Eclipse IDE for Java EE developers  2021-12 version
+* Apache Tomcat Server 9.0.55
+* Oracle Database Express Edition
+
+Project Set Up
+
+1. Clone the project from Github.
+2. Import to eclipse workspace as a maven project.
+3. Update the maven project to install all dependecies.
+4. Download Apache Tomcat Server 9.0 and change the server port to port: 8085
+5. Run the DB Script and change username and password feilds of bean named dataSource to your credentials.
+6. Change the folder upload location of mentioned as UPLOAD_FOLDER in Constants.java(com.elearning.util package) to a folder location in your computer.
+7. Run the project as;
+    right click on project -> Run as -> Run on Server -> select Apache Tomcat Server v9.0 at localhost -> add the project to server and click finish.
+
