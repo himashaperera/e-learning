@@ -7,9 +7,10 @@ import com.elearning.util.ApplicationException;
 
 public interface LearnerService {
 	
-	public void createLearner(Learner learner) throws ApplicationException;
-	public void updateLearner(Learner learner) throws ApplicationException;
-	public List<Learner> getAllLearners();
-	public Learner getLearnerById(Long id) throws ApplicationException ;
+	void createLearner(Learner learner) throws ApplicationException;
+	void updateLearner(Learner learner) throws ApplicationException;
+	List<Learner> getAllLearners();
+	Learner getLearnerByEmail(Learner learner) throws ApplicationException;
+	Learner getLearnerById(Long id) throws ApplicationException ;
 	
 }

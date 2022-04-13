@@ -46,5 +46,21 @@ public class LearnerServiceImpl implements LearnerService{
 		return learnerById;
 	}
 
+	@Override
+	public Learner getLearnerByEmail(Learner learner) throws ApplicationException{
+		
+		Learner learnerByEmail = this.learnerDAO.getLearnerByEmail(learner.getEmail());
+		if(learnerByEmail == null) {
+			throw new ApplicationException(Constants.NOT_FOUND_MESSAGE);
+		}
+		
+		String password = Integer.toString(learner.getPassword().hashCode());
+		
+		if(password.equals(learnerByEmail.getPassword()))
+			return learnerByEmail;
+		else 
+			throw new ApplicationException(Constants.PASSWORD_INCORRECT_MESSAGE);
+	}
+
 
 }

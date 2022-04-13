@@ -17,9 +17,10 @@ public class LearnerDAOImpl implements LearnerDAO{
 	private JdbcTemplate jdbcTemplate;
 	
 	public Integer createLearner(Learner learner) {
-		String sql = "insert into learner(id, firstname, lastname, email, username, password) values(?, ?, ?, ?, ?, ?)";
+		System.out.println(learner.getPassword().hashCode());
+		String sql = "insert into learner(learnerid, firstName, lastName, email, userName, password) values(?, ?, ?, ?, ?, ?)";
 		int update = this.jdbcTemplate.update(sql, learner.getId(), learner.getFirstName(), learner.getLastName(), learner.getEmail(),
-				learner.getUserName(), learner.getPassword());
+				learner.getUserName(), learner.getPassword().hashCode());
 		return update;
 	}
 
@@ -42,6 +43,17 @@ public class LearnerDAOImpl implements LearnerDAO{
 		}
 	}
 
+	public Learner getLearnerByEmail(String email) {
+		String sql = "select * from learner where email = ? ";
+		List<Learner> learnerList = this.jdbcTemplate.query(sql, new LearnerRowMapper(), email);
+		
+		if(learnerList.isEmpty()) {
+			return null;
+		}else {
+			return learnerList.get(0);
+		}
+	}
+	
 	public List<Learner> getAllLearners() {
 		
 		String sql = "select * from learner";

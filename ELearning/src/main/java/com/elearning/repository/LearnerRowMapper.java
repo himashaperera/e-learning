@@ -12,13 +12,13 @@ public class LearnerRowMapper implements RowMapper<Learner>{
 	public Learner mapRow(ResultSet rs, int rowNum) throws SQLException {
 		
 		Learner learner= new Learner();
-		learner.setId(rs.getLong("id"));
+		learner.setId(rs.getLong("learnerid"));
 		learner.setFirstName(rs.getString("firstname"));
 		learner.setLastName(rs.getString("lastname"));
-		learner.setUserName(rs.getString("username"));
+		learner.setUserName(rs.getString("userName"));
 		learner.setEmail(rs.getString("email"));
 		learner.setPassword(rs.getString("password"));
-		learner.setNumberOfCoursesTaken(rs.getInt("no_of_courses"));
+		learner.setNumberOfCoursesTaken(rs.getInt("noOfCoursesTaken"));
 		return learner;
 	}
 

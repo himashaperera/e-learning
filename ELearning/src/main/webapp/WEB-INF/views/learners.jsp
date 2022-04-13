@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"
+	import="com.elearning.util.SuccessStatus"%>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -7,10 +11,33 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
     <title>Hello, world!</title>
   </head>
   <body>
+  
+  	<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+    <path
+			d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+  </symbol>
+  <symbol id="exclamation-triangle-fill" fill="currentColor"
+			viewBox="0 0 16 16">
+    <path
+			d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+  </symbol>
+</svg>
+
+  
+ 			<%
+			Integer status = 0;
+			SuccessStatus successStatus = (SuccessStatus) request.getAttribute("successStatus");
+			status = (request.getAttribute("successStatus") == null) ? 2 : ((successStatus.sStatus == null) ? 2: successStatus.sStatus);
+			String successMsg = "";
+			if (status != 2) {
+				successMsg = successStatus.statusMessage;
+
+			}
+			%>
         <div class="container mt-5" id="signin">
             <ul class="nav nav-tabs nav-pills" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
@@ -22,7 +49,7 @@
               </ul>
               <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                  <form class="needs-validation" novalidate action="loginProcess" method="post">
+                  <form class="needs-validation" novalidate action="sign-in" method="post">
                     <div class="mb-3">
                       <label for="exampleInputEmail1" class="form-label">Email address</label>
                       <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
@@ -36,7 +63,7 @@
                     </div>
                     <div class="mb-3">
                       <label for="pass" class="form-label">Password</label>
-                      <input type="password" class="form-control" name="email" id="pass" required>
+                      <input type="password" class="form-control" name="password" id="pass" required>
                     </div>
                     <div class="mb-3 form-check">
                       <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
@@ -44,10 +71,54 @@
                     </div>
                     <input class="btn btn-success" type="submit" name="submit">
                   </form>
+                  
+                  
+              				<br />
+			<div>
+				<%
+				if (status == 1) {
+				%>
+				<div
+					class="alert alert-success d-flex align-items-center alert-dismissible fade show"
+					role="alert">
+					<svg class="bi flex-shrink-0 me-2" width="24" height="24"
+						role="img" aria-label="Success:">
+						<use xlink:href="#check-circle-fill" /></svg>
+					<div><%=successMsg%>
+					</div>
+					<button type="button" class="btn-close" data-bs-dismiss="alert"
+						aria-label="Close"></button>
+				</div>
+
+				<%
+				} else if (status == 0) {
+				%>
+
+				<div
+					class="alert alert-danger d-flex align-items-center alert-dismissible fade show"
+					role="alert">
+					<svg class="bi flex-shrink-0 me-2" width="24" height="24"
+						role="img" aria-label="Danger:">
+						<use xlink:href="#exclamation-triangle-fill" /></svg>
+					<div><%=successMsg%>
+					</div>
+					<button type="button" class="btn-close" data-bs-dismiss="alert"
+						aria-label="Close"></button>
+				</div>
+
+				<%
+				}
+				%>
+
+
+
+			</div>
+              	
                 </div>
+                <!-- Sign In Form -->
                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                     <div id="registration">
-                      <form class="needs-validation" novalidate action="add" method="post">
+                      <form class="needs-validation" novalidate action="learners/add" method="post">
                         <div class="mb-3">
                             <label for="InputFirstName" class="form-label">First Name</label>
                             <input type="text" class="form-control" id="InputFirstName" name="firstName" aria-describedby="InputFirstNameHelper" pattern="^[A-Za-z]+$" required>
@@ -88,16 +159,12 @@
                         </div>
                         <div class="mb-3">
                           <label for="exampleInputPassword1" class="form-label">Password</label>
-                          <input type="password" class="form-control" name="pass" id="exampleInputPassword1" required>
+                          <input type="password" class="form-control" name="password" id="exampleInputPassword1" required>
                         </div>
                         <div class="mb-3">
                             <label for="InputPasswordRe" class="form-label">Re-Enter Password</label>
-                            <input type="password" class="form-control" id="InputPasswordRe" name="password" required>
+                            <input type="password" class="form-control" id="InputPasswordRe" name="reEnterPassword" required>
                           </div>
-                        <div class="mb-3">
-                          <label class="form-label" for="typeNumber">Number of Courses taken</label> 
-                          <input type="number" id="typeNumber" name="numberOfCoursesTaken" class="form-control" required/>                        
-                        </div>
                         <button type="submit" class="btn btn-success">Submit</button>
                       </form>
                     </div>

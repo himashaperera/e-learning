@@ -9,6 +9,7 @@ public interface LearnerDAO {
 
 	Integer createLearner(Learner learner);
 	Integer updateLearner(Learner learner);
+	Learner getLearnerByEmail(String email);
 	Learner getLearnerById(Long id);
 	List<Learner> getAllLearners();
 	

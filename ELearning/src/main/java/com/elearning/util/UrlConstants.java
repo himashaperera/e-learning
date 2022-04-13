@@ -17,6 +17,8 @@ public class UrlConstants {
 	
 	public static final String GET_LEARNER = "/learners/{id}";
 	public static final String ALL_LEARNERS = "/learners";
+	public static final String SIGN_IN_LEARNERS_VIEW = "/";
+	public static final String SIGN_IN_LEARNERS = "/sign-in";
 	public static final String CREATE_LEARNER = "/learners/add";
 	public static final String UPDATE_LEARNER = "/learners/update";
 	

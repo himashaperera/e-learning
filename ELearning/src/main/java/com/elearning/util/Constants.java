@@ -27,6 +27,7 @@ public class Constants {
 	
 	public static final String LEARNER_VIEW = "learners";
 	public static final String LEARNER_DETAIL = "learnerDetail";
+	public static final String LEARNER_WELCOME = "welcome/welcome";
 	
     public static final String FEEDBACK_VIEW = "feedbacks";
 	public static final String FEEDBACK_DETAIL = "feedbackDetail";
@@ -38,6 +39,7 @@ public class Constants {
 	public static final String UPDATE_ERROR_MESSAGE  = "Error occured during update";
 	public static final String CREATE_ERROR_MESSAGE  = "Error occured during creation";
 	public static final String NOT_FOUND_MESSAGE  = "Not Found";
+	public static final String PASSWORD_INCORRECT_MESSAGE  = "Password is Incorrect. Please try again.";
 	public static final String SUCCESS_STATUS = "successStatus";
 	public static final String STATUS = "sStatus";
 	
