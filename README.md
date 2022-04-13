@@ -23,9 +23,10 @@ Project Set Up
 1. Clone the project from Github.
 2. Import to eclipse workspace as a maven project.
 3. Update the maven project to install all dependecies.
-4. Download Apache Tomcat Server 9.0 and change the server port to port: 8085
-5. Run the DB Script and change username and password feilds of bean named dataSource to your credentials.
-6. Change the folder upload location of mentioned as UPLOAD_FOLDER in Constants.java(com.elearning.util package) to a folder location in your computer.
-7. Run the project as;
+4. Change project complaince level to java 1.8 from: right clicking on project -> properties -> project facets -> select java 1.8 -> click apply and apply and close
+5. Download Apache Tomcat Server 9.0 and change the server port to port: 8085
+6. Run the DB Script and change username and password feilds of bean named dataSource to your credentials.
+7. Change the folder upload location of mentioned as UPLOAD_FOLDER in Constants.java(com.elearning.util package) to a folder location in your computer.
+8. Run the project as;
     right click on project -> Run as -> Run on Server -> select Apache Tomcat Server v9.0 at localhost -> add the project to server and click finish.
 
