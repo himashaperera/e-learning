@@ -69,12 +69,14 @@
 			
 			<p><%=(lesson.getDescription() == null) ? "" : lesson.getDescription()%>
 			</p>
-			<h6 class="text-secondary">Course Material</h6>
+			
 			
 				<%
 				List<CourseMaterial> material = (List<CourseMaterial>)lesson.getCourseMaterialList();
 				if(material!=null){
-					if(!material.isEmpty()){
+					if(!material.isEmpty()){%>
+						<h6 class="text-secondary">Course Material</h6>
+					<%	
 						for(CourseMaterial cm: material){
 							List<Document> documents = cm.getDocumentList();
 							

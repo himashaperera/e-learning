@@ -31,12 +31,6 @@ public class LessonController {
 	@RequestMapping(path=UrlConstants.CREATE_LESSON, method=RequestMethod.POST)
 	public String createLesson(@ModelAttribute Lesson lesson, Model model) {
 		
-		System.out.println(lesson);
-		List<CourseMaterial> courseMaterialList = lesson.getCourseMaterialList();
-		System.out.println(courseMaterialList);
-		for (CourseMaterial courseMaterial : courseMaterialList) {
-			System.out.println("courseMaterial: " + courseMaterial);
-		}
 		try {
 			this.lessonService.createLesson(lesson);
 		} catch (ApplicationException e) {
