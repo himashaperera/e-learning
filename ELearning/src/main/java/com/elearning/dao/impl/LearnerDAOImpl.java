@@ -17,7 +17,6 @@ public class LearnerDAOImpl implements LearnerDAO{
 	private JdbcTemplate jdbcTemplate;
 	
 	public Integer createLearner(Learner learner) {
-		System.out.println(learner.getPassword().hashCode());
 		String sql = "insert into learner(learnerid, firstName, lastName, email, userName, password) values(?, ?, ?, ?, ?, ?)";
 		int update = this.jdbcTemplate.update(sql, learner.getId(), learner.getFirstName(), learner.getLastName(), learner.getEmail(),
 				learner.getUserName(), learner.getPassword().hashCode());
