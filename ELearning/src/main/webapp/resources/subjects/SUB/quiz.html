@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+	<link rel="shortcut icon" type="png" href="../images/icon/favicon.png">
+	<title>Quiz_teamC</title>
+	<link rel="stylesheet" type="text/css" href="quizStyle.css">
+	
+	<link  rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	
+<!-- NAVIGATION -->
+	<!-- NAVIGATION -->
+
+	
+
+
+	<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>eLEARNING</h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="../../index.html" class="nav-item nav-link">HOME</a>
+                <a href="about.html" class="nav-item nav-link">ABOUT</a>
+                
+                <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">COURSES</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="courses.html" class="dropdown-item">Our Courses</a>
+                        <a href="courses.html" class="dropdown-item">Quizes</a>
+                        <a href="courses.html" class="dropdown-item">Sample papers</a>
+                    </div>
+                </div>
+
+
+         <a href="contact.html" class="nav-item nav-link">CONTACT</a>
+            </div>
+            <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Sign In<i class="fa fa-arrow-right ms-3"></i></a>
+        </div>
+    </nav>
+	
+
+<!-- MAIN Heading of Page -->
+	<div class="title" id="title">
+		<span>Daily Quiz on TEAM _C</span>
+		<div class="shortdesc"><br>
+			<p>If you think education is expensive, try ignorance</p>
+		</div>
+		<button onclick="startquiz()">Start Now</button>
+	</div>
+
+
+<div class="panel" id="panel">
+	
+	<div class="left-side" id="left">
+		<ul>
+			<li onclick="quizt(1)">HOME</li>
+			<li onclick="quizt(2)">JEE Mains</li>
+			<li onclick="quizt(3)">JEE Advanced</li>
+			<li onclick="quizt(4)">GATE</li>
+			<li onclick="quizt(5)">C/C++</li>
+			<li onclick="quizt(6)">Java</li>
+			<li onclick="quizt(7)">Python</li>
+			<li onclick="quizt(8)">JavaScript</li>
+			<li onclick="quizt(9)">Data Structures</li>
+			<li onclick="quizt(10)">Algorithm</li>
+			<li onclick="quizt(11)">Interview Questions</li>
+		</ul>
+	</div>
+
+	<div class="right-side" id="right">
+		<div id="quiz-container">
+			
+			<div id="f1"><div class="quiz-frame main-frame"></div></div>
+
+			<div id="f2"><iframe class="quiz-frame" src="https://docs.google.com/forms/d/e/1FAIpQLSe3hXLPuiQGqj1n3IeeAzM8YLNpgJIIk_zfteoEdWka4X3wxQ/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></div>
+			
+			<div id="f3"><iframe class="quiz-frame" src="https://docs.google.com/forms/d/e/1FAIpQLSeVTLsd_AqZGpbIMnZRm20OKrjjiYSirWBjfCHpWtAsMQU--g/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></div>
+			
+			<div id="f4"><iframe class="quiz-frame" src="https://docs.google.com/forms/d/e/1FAIpQLSdjSKZhQp5jqqR34zD_uWMtgXr18F9pdK6YqcafLSP6J7VZjw/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></div>
+
+			<div id="f5"><iframe class="quiz-frame" src="https://docs.google.com/forms/d/e/1FAIpQLSe1xs1-41MAbLN7KkXrJwtGdbl5ydxe_vX_nmFRjf6c0wtYkA/viewform?embedded=true"  frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></iframe></div>
+			
+			<div id="f6"><iframe class="quiz-frame" src="https://docs.google.com/forms/d/e/1FAIpQLSdHFDm_BakVxro_zJI78OF2OLJpXgDzzaAVMHD9hptWlXBSpA/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></div>
+			
+			<div id="f7"><iframe class="quiz-frame" src="https://docs.google.com/forms/d/e/1FAIpQLSdgD7yFEJtqpkImDiLAaQ7w9VcsO688gr1V3Gl7FqwM5yXtWQ/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></div>
+
+			<div id="f8"><iframe class="quiz-frame" src="https://docs.google.com/forms/d/e/1FAIpQLSchDBnai_Aup7YFJQegg4z-qoB338p010VgZRxBYDT17xoRew/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></div>
+
+			<div id="f9"><iframe class="quiz-frame" src="https://docs.google.com/forms/d/e/1FAIpQLSfY5oIAz4R9Ty-LBpx7h4th6OJ0-RkrxIlLslRV4NjwwW8_uw/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></div>
+			
+			<div id="f10"><iframe class="quiz-frame" src="https://docs.google.com/forms/d/e/1FAIpQLSflwS89sG7H98J9vFgFqJgsKaZ5gpq3yUlOiW3up7RQQ-qRnw/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></div>
+
+			<div id="f11"><iframe class="quiz-frame" src="https://docs.google.com/forms/d/e/1FAIpQLSe_aS8-CMNFdUzI1UE73zahC2bmMwJkmB6FJXPIeKbLIBqB4Q/viewform?embedded=true" frameborder="0" marginheiclass="quiz-frame" ght="0" marginwidth="0">Loading…</iframe></div>
+
+		</div>
+	</div>
+
+</div>
+
+	<script type="text/javascript" src="quizScript.js"></script>
+</body>
+</html>
